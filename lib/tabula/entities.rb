@@ -101,7 +101,7 @@ module Tabula
       # ze = ZoneEntity.new(area[0], area[1], area[3] - area[1], area[2] - area[0])
       # self.texts.select { |t| t.overlaps? ze } 
       self.texts.select do |t| 
-        t.top > area[0] && t.top + t.height < area[2] && t.left > area[1] && t.left + t.width < area[3]
+        t.top + t.height > area[0] && t.top < area[2] && t.left + t.width > area[1] && t.left < area[3]
       end
     end
 
